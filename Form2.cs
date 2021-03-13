@@ -85,7 +85,29 @@ namespace laboratorio2
             alquileres.Add(alquiler);
             Guardar();
 
+            FileStream stream = new FileStream("vehiculos.txt", FileMode.OpenOrCreate, FileAccess.Write);
+            StreamWriter writer = new StreamWriter(stream);
+            foreach (var v in alquileres)
+            {
+                writer.WriteLine(v.Nit);
+                writer.WriteLine(v.Placa);
+                writer.WriteLine(v.FechaAlquiler);
+                writer.WriteLine(v.FechaDevolucion);
+                writer.WriteLine(v.Kilometros);
+            }
+            writer.Close();
+            textBoxNit.Text = "";
+            textBoxKilometros.Text = "";
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            Form1 x = new Form1();
+            this.Hide();
+            x.ShowDialog();
+            this.Close();
         }
     }
 }

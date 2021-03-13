@@ -30,19 +30,19 @@ namespace laboratorio2
         private void InitializeComponent()
         {
             this.buttonGuardar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonAlquiler = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.textBoxPlaca = new System.Windows.Forms.TextBox();
+            this.textBoxPrecio = new System.Windows.Forms.TextBox();
+            this.comboBoxMarca = new System.Windows.Forms.ComboBox();
+            this.comboBoxColor = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.numericUpDownModelo = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownModelo)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonGuardar
@@ -53,15 +53,17 @@ namespace laboratorio2
             this.buttonGuardar.TabIndex = 0;
             this.buttonGuardar.Text = "Guardar";
             this.buttonGuardar.UseVisualStyleBackColor = true;
+            this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
-            // button2
+            // buttonAlquiler
             // 
-            this.button2.Location = new System.Drawing.Point(507, 154);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonAlquiler.Location = new System.Drawing.Point(507, 154);
+            this.buttonAlquiler.Name = "buttonAlquiler";
+            this.buttonAlquiler.Size = new System.Drawing.Size(75, 23);
+            this.buttonAlquiler.TabIndex = 1;
+            this.buttonAlquiler.Text = "Ir a Alquiler";
+            this.buttonAlquiler.UseVisualStyleBackColor = true;
+            this.buttonAlquiler.Click += new System.EventHandler(this.buttonAlquiler_Click);
             // 
             // button3
             // 
@@ -90,42 +92,46 @@ namespace laboratorio2
             this.label2.TabIndex = 4;
             this.label2.Text = "Marca:";
             // 
-            // textBox1
+            // textBoxPlaca
             // 
-            this.textBox1.Location = new System.Drawing.Point(144, 64);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 8;
+            this.textBoxPlaca.Location = new System.Drawing.Point(144, 64);
+            this.textBoxPlaca.Name = "textBoxPlaca";
+            this.textBoxPlaca.Size = new System.Drawing.Size(121, 20);
+            this.textBoxPlaca.TabIndex = 8;
             // 
-            // textBox2
+            // textBoxPrecio
             // 
-            this.textBox2.Location = new System.Drawing.Point(144, 317);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 20);
-            this.textBox2.TabIndex = 9;
+            this.textBoxPrecio.Location = new System.Drawing.Point(144, 317);
+            this.textBoxPrecio.Name = "textBoxPrecio";
+            this.textBoxPrecio.Size = new System.Drawing.Size(121, 20);
+            this.textBoxPrecio.TabIndex = 9;
             // 
-            // numericUpDown1
+            // comboBoxMarca
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(144, 191);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 14;
+            this.comboBoxMarca.FormattingEnabled = true;
+            this.comboBoxMarca.Items.AddRange(new object[] {
+            "Toyota",
+            "Honda",
+            "Mazda",
+            "Hyundai"});
+            this.comboBoxMarca.Location = new System.Drawing.Point(144, 127);
+            this.comboBoxMarca.Name = "comboBoxMarca";
+            this.comboBoxMarca.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxMarca.TabIndex = 15;
             // 
-            // comboBox1
+            // comboBoxColor
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(144, 127);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 15;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(144, 243);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 17;
+            this.comboBoxColor.FormattingEnabled = true;
+            this.comboBoxColor.Items.AddRange(new object[] {
+            "Rojo",
+            "Negro",
+            "Gris",
+            "Azul",
+            "Blanco"});
+            this.comboBoxColor.Location = new System.Drawing.Point(143, 251);
+            this.comboBoxColor.Name = "comboBoxColor";
+            this.comboBoxColor.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxColor.TabIndex = 17;
             // 
             // label3
             // 
@@ -154,6 +160,28 @@ namespace laboratorio2
             this.label5.TabIndex = 20;
             this.label5.Text = "Precio a pagar:";
             // 
+            // numericUpDownModelo
+            // 
+            this.numericUpDownModelo.Location = new System.Drawing.Point(144, 191);
+            this.numericUpDownModelo.Maximum = new decimal(new int[] {
+            2020,
+            0,
+            0,
+            0});
+            this.numericUpDownModelo.Minimum = new decimal(new int[] {
+            2014,
+            0,
+            0,
+            0});
+            this.numericUpDownModelo.Name = "numericUpDownModelo";
+            this.numericUpDownModelo.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownModelo.TabIndex = 14;
+            this.numericUpDownModelo.Value = new decimal(new int[] {
+            2014,
+            0,
+            0,
+            0});
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -162,19 +190,20 @@ namespace laboratorio2
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.comboBoxColor);
+            this.Controls.Add(this.comboBoxMarca);
+            this.Controls.Add(this.numericUpDownModelo);
+            this.Controls.Add(this.textBoxPrecio);
+            this.Controls.Add(this.textBoxPlaca);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonAlquiler);
             this.Controls.Add(this.buttonGuardar);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownModelo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,18 +212,18 @@ namespace laboratorio2
         #endregion
 
         private System.Windows.Forms.Button buttonGuardar;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonAlquiler;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox textBoxPlaca;
+        private System.Windows.Forms.TextBox textBoxPrecio;
+        private System.Windows.Forms.ComboBox comboBoxMarca;
+        private System.Windows.Forms.ComboBox comboBoxColor;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown numericUpDownModelo;
     }
 }
 

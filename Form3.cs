@@ -17,7 +17,7 @@ namespace laboratorio2
         List<Vehiculos> vehiculos = new List<Vehiculos>();
         List<Clientes> clientes = new List<Clientes>();
         List<reporte> reportes = new List<reporte>();
- 
+
         public Form3()
         {
             InitializeComponent();
@@ -91,9 +91,43 @@ namespace laboratorio2
         {
             int mayor = alquileres.Max(k => k.Kilometros);
 
-            labelRecorrido.Text = "El mayor recorrido fue de " + mayor.ToString();
+            label1.Text = "El mayor recorrido fue de " + mayor.ToString();
         }
 
-    }
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            foreach (var alquiler in alquileres)
+            {
+                Clientes cliente = clientes.Find(c => c.Nit == alquiler.Nit);
+
+                Vehiculos vehiculo = vehiculos.Find(v => v.Placa == alquiler.Placa);
+
+                reporte reporte = new reporte();
+                reporte.Nombre = cliente.Nombre;
+                reporte.Placa = vehiculo.Placa;
+                reporte.Marca = vehiculo.Marca;
+                reporte.Modelo = vehiculo.Modelo;
+                reporte.Color = vehiculo.Color;
+                reporte.FechaDevolucion = alquiler.FechaDevolucion;
+                reporte.Total = vehiculo.Precio * alquiler.Kilometros;
+
+                reportes.Add(reporte);
+
+            }
+
+            dataGridViewReporte.DataSource = null;
+            dataGridViewReporte.DataSource = reportes;
+            dataGridViewReporte.Refresh();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form1 x = new Form1();
+            this.Hide();
+            x.ShowDialog();
+            this.Close();
+
+        }
     }
 }

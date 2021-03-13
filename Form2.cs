@@ -96,7 +96,7 @@ namespace laboratorio2
         private void button2_Click(object sender, EventArgs e)
         {
 
-            Form1 x = new Form1();
+            Form3 x = new Form3();
             this.Hide();
             x.ShowDialog();
             this.Close();

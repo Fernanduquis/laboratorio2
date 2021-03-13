@@ -18,6 +18,7 @@ namespace laboratorio2
         public string Placa { get => placa; set => placa = value; }
         public DateTime FechaAlquiler { get => fechaAlquiler; set => fechaAlquiler = value; }
         public DateTime FechaDevolucion { get => fechaDevolucion; set => fechaDevolucion = value; }
+        public int Kilometros { get => kilometros; set => kilometros = value; }
 
         internal void ShowDialog()
         {

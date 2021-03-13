@@ -32,11 +32,11 @@ namespace laboratorio2
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.textBoxNit = new System.Windows.Forms.TextBox();
+            this.textBoxKilometros = new System.Windows.Forms.TextBox();
+            this.comboBoxPlaca = new System.Windows.Forms.ComboBox();
+            this.dateTimePickerSalida = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerEntrega = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,6 +52,7 @@ namespace laboratorio2
             this.buttonGuardar.TabIndex = 0;
             this.buttonGuardar.Text = "Guardar";
             this.buttonGuardar.UseVisualStyleBackColor = true;
+            this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
             // button2
             // 
@@ -71,41 +72,41 @@ namespace laboratorio2
             this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // textBoxNit
             // 
-            this.textBox1.Location = new System.Drawing.Point(143, 72);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
+            this.textBoxNit.Location = new System.Drawing.Point(143, 72);
+            this.textBoxNit.Name = "textBoxNit";
+            this.textBoxNit.Size = new System.Drawing.Size(100, 20);
+            this.textBoxNit.TabIndex = 3;
             // 
-            // textBox2
+            // textBoxKilometros
             // 
-            this.textBox2.Location = new System.Drawing.Point(143, 296);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 4;
+            this.textBoxKilometros.Location = new System.Drawing.Point(143, 296);
+            this.textBoxKilometros.Name = "textBoxKilometros";
+            this.textBoxKilometros.Size = new System.Drawing.Size(100, 20);
+            this.textBoxKilometros.TabIndex = 4;
             // 
-            // comboBox1
+            // comboBoxPlaca
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(143, 114);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 5;
+            this.comboBoxPlaca.FormattingEnabled = true;
+            this.comboBoxPlaca.Location = new System.Drawing.Point(143, 114);
+            this.comboBoxPlaca.Name = "comboBoxPlaca";
+            this.comboBoxPlaca.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxPlaca.TabIndex = 5;
             // 
-            // dateTimePicker1
+            // dateTimePickerSalida
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(143, 176);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 6;
+            this.dateTimePickerSalida.Location = new System.Drawing.Point(143, 176);
+            this.dateTimePickerSalida.Name = "dateTimePickerSalida";
+            this.dateTimePickerSalida.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerSalida.TabIndex = 6;
             // 
-            // dateTimePicker2
+            // dateTimePickerEntrega
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(143, 232);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 7;
+            this.dateTimePickerEntrega.Location = new System.Drawing.Point(143, 232);
+            this.dateTimePickerEntrega.Name = "dateTimePickerEntrega";
+            this.dateTimePickerEntrega.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerEntrega.TabIndex = 7;
             // 
             // label1
             // 
@@ -162,11 +163,11 @@ namespace laboratorio2
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dateTimePickerEntrega);
+            this.Controls.Add(this.dateTimePickerSalida);
+            this.Controls.Add(this.comboBoxPlaca);
+            this.Controls.Add(this.textBoxKilometros);
+            this.Controls.Add(this.textBoxNit);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.buttonGuardar);
@@ -183,11 +184,11 @@ namespace laboratorio2
         private System.Windows.Forms.Button buttonGuardar;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.TextBox textBoxNit;
+        private System.Windows.Forms.TextBox textBoxKilometros;
+        private System.Windows.Forms.ComboBox comboBoxPlaca;
+        private System.Windows.Forms.DateTimePicker dateTimePickerSalida;
+        private System.Windows.Forms.DateTimePicker dateTimePickerEntrega;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

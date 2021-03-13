@@ -64,6 +64,7 @@ namespace laboratorio2
 
             if (existe)
             {
+
                 MessageBox.Show("PLACA YA EXCISTENTE", "ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
@@ -73,7 +74,7 @@ namespace laboratorio2
 
                 vehiculo.Placa = textBoxPlaca.Text;
                 vehiculo.Marca = comboBoxMarca.SelectedItem.ToString();
-                vehiculo.Modelo = Convert.ToInt32(comboBox1);
+                vehiculo.Modelo = Convert.ToInt32(numericUpDownModelo.Value);
                 vehiculo.Color = comboBoxColor.SelectedItem.ToString();
                 vehiculo.Precio = Convert.ToDouble(textBoxPrecio.Text);
                 vehiculos.Add(vehiculo);
@@ -82,12 +83,30 @@ namespace laboratorio2
                 Guardar();
 
             }
+
+            FileStream stream = new FileStream("vehiculos.txt", FileMode.OpenOrCreate, FileAccess.Write);
+            StreamWriter writer = new StreamWriter(stream);
+            foreach (var v in vehiculos)
+            {
+                writer.WriteLine(v.Placa);
+                writer.WriteLine(v.Marca);
+                writer.WriteLine(v.Modelo);
+                writer.WriteLine(v.Color);
+                writer.WriteLine(v.Precio);
+            }
+            writer.Close();
+            textBoxPlaca.Text = "";
+            textBoxPrecio.Text = "";
+
         }
 
         private void buttonAlquiler_Click(object sender, EventArgs e)
         {
 
-
+            Form2 x = new Form2();
+            this.Hide();
+            x.ShowDialog();
+            this.Close();
         }
     }
 }

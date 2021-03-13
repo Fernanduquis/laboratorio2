@@ -83,18 +83,6 @@ namespace laboratorio2
                 Guardar();
 
             }
-
-            FileStream stream = new FileStream("vehiculos.txt", FileMode.OpenOrCreate, FileAccess.Write);
-            StreamWriter writer = new StreamWriter(stream);
-            foreach (var v in vehiculos)
-            {
-                writer.WriteLine(v.Placa);
-                writer.WriteLine(v.Marca);
-                writer.WriteLine(v.Modelo);
-                writer.WriteLine(v.Color);
-                writer.WriteLine(v.Precio);
-            }
-            writer.Close();
             textBoxPlaca.Text = "";
             textBoxPrecio.Text = "";
 

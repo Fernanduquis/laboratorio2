@@ -87,15 +87,7 @@ namespace laboratorio2
 
             FileStream stream = new FileStream("vehiculos.txt", FileMode.OpenOrCreate, FileAccess.Write);
             StreamWriter writer = new StreamWriter(stream);
-            foreach (var v in alquileres)
-            {
-                writer.WriteLine(v.Nit);
-                writer.WriteLine(v.Placa);
-                writer.WriteLine(v.FechaAlquiler);
-                writer.WriteLine(v.FechaDevolucion);
-                writer.WriteLine(v.Kilometros);
-            }
-            writer.Close();
+
             textBoxNit.Text = "";
             textBoxKilometros.Text = "";
 

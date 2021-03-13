@@ -35,6 +35,7 @@ namespace laboratorio2
                 while (reader.Peek() > -1)
                 {
                     Vehiculos vehiculo = new Vehiculos();
+
                     vehiculo.Placa = reader.ReadLine();
                     vehiculo.Marca = reader.ReadLine();
                     vehiculo.Modelo = Convert.ToInt32(reader.ReadLine());
@@ -55,7 +56,7 @@ namespace laboratorio2
                 {
                     Clientes cliente = new Clientes();
                     cliente.Nit = reader.ReadLine();
-                    cliente.Nombre = reader.ReadLine();
+                    cliente.Nombre1 = reader.ReadLine();
                     cliente.Direccion = reader.ReadLine();
 
                     clientes.Add(cliente);
@@ -85,6 +86,8 @@ namespace laboratorio2
 
 
 
+
+
         }
 
         private void buttonRecorrido_Click(object sender, EventArgs e)
@@ -104,7 +107,7 @@ namespace laboratorio2
                 Vehiculos vehiculo = vehiculos.Find(v => v.Placa == alquiler.Placa);
 
                 reporte reporte = new reporte();
-                reporte.Nombre = cliente.Nombre;
+                //reporte.Nombre = cliente.Nombre1;
                 reporte.Placa = vehiculo.Placa;
                 reporte.Marca = vehiculo.Marca;
                 reporte.Modelo = vehiculo.Modelo;

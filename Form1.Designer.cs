@@ -31,7 +31,6 @@ namespace laboratorio2
         {
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.buttonAlquiler = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxPlaca = new System.Windows.Forms.TextBox();
@@ -47,9 +46,9 @@ namespace laboratorio2
             // 
             // buttonGuardar
             // 
-            this.buttonGuardar.Location = new System.Drawing.Point(507, 110);
+            this.buttonGuardar.Location = new System.Drawing.Point(377, 170);
             this.buttonGuardar.Name = "buttonGuardar";
-            this.buttonGuardar.Size = new System.Drawing.Size(75, 23);
+            this.buttonGuardar.Size = new System.Drawing.Size(112, 23);
             this.buttonGuardar.TabIndex = 0;
             this.buttonGuardar.Text = "Guardar";
             this.buttonGuardar.UseVisualStyleBackColor = true;
@@ -57,22 +56,13 @@ namespace laboratorio2
             // 
             // buttonAlquiler
             // 
-            this.buttonAlquiler.Location = new System.Drawing.Point(507, 154);
+            this.buttonAlquiler.Location = new System.Drawing.Point(377, 214);
             this.buttonAlquiler.Name = "buttonAlquiler";
-            this.buttonAlquiler.Size = new System.Drawing.Size(75, 23);
+            this.buttonAlquiler.Size = new System.Drawing.Size(112, 23);
             this.buttonAlquiler.TabIndex = 1;
             this.buttonAlquiler.Text = "Ir a Alquiler";
             this.buttonAlquiler.UseVisualStyleBackColor = true;
             this.buttonAlquiler.Click += new System.EventHandler(this.buttonAlquiler_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(507, 197);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -197,7 +187,6 @@ namespace laboratorio2
             this.Controls.Add(this.textBoxPlaca);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.buttonAlquiler);
             this.Controls.Add(this.buttonGuardar);
             this.Name = "Form1";
@@ -213,7 +202,6 @@ namespace laboratorio2
 
         private System.Windows.Forms.Button buttonGuardar;
         private System.Windows.Forms.Button buttonAlquiler;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxPlaca;
